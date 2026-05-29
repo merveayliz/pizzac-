@@ -1,12 +1,10 @@
 <!DOCTYPE html>
-<html lang="tr" class="overflow-x-hidden"> <!-- Sayfanın sağa kaymasını kökten engellemek için -->
+<html lang="tr" class="overflow-x-hidden"> 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Pizza Bella - Hizmetinizde</title>
-    <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- FontAwesome İkonları -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         .splash-hidden {
@@ -27,9 +25,6 @@
 </head>
 <body class="bg-stone-900 text-stone-100 font-sans antialiased selection:bg-red-600 selection:text-white overflow-x-hidden">
 
-    <!-- ================================================================= -->
-    <!-- 1. GİRİŞ ANİMASYONU (SPLASH SCREEN) & DİL SEÇİM MODALİ -->
-    <!-- ================================================================= -->
     <div id="splash-screen" class="fixed inset-0 z-50 flex items-center justify-center bg-stone-950">
         <img src="img/12.jpg" alt="Pizza Bella PC" class="absolute inset-0 w-full h-full object-cover hidden md:block opacity-40">
         <img src="img/giriş.jpg" alt="Pizza Bella Mobile" class="absolute inset-0 w-full h-full object-cover block md:hidden opacity-40">
@@ -52,20 +47,14 @@
         </div>
     </div>
 
-    <!-- ================================================================= -->
-    <!-- ANA SİTE İÇERİĞİ -->
-    <!-- ================================================================= -->
     <div id="main-site-content" class="content-hidden w-full overflow-x-hidden">
 
-        <!-- ================================================================= -->
-        <!-- 2. HEADER & NAVIGATION (Taşmayı Önleyen Esnek Düzen) -->
-        <!-- ================================================================= -->
         <header class="sticky top-0 z-40 bg-stone-950/90 backdrop-blur-md border-b border-stone-800 shadow-xl w-full">
             <div class="max-w-6xl mx-auto px-3 h-20 flex items-center justify-between gap-2">
-                <!-- Logo: Mobilde sığması için text-lg yapıldı -->
+                
                 <a href="#" class="text-lg md:text-2xl font-black text-red-500 tracking-wider font-serif shrink-0">PIZZA BELLA</a>
                 
-                <!-- Navigasyon: px-2 ve text-[11px] ile en küçük ekranda bile yan yana taşmadan sığar -->
+              
                 <nav class="flex items-center gap-1 md:gap-4">
                     <a href="#menu-section" id="nav-menu" class="bg-stone-900 hover:bg-stone-800 text-stone-200 text-[11px] md:text-base font-semibold py-2 px-2 md:px-4 rounded-lg transition border border-stone-800 flex items-center gap-1 shrink-0">
                         <i class="fa-solid fa-pizza-slice text-red-500"></i> <span>Menü</span>
@@ -80,46 +69,37 @@
             </div>
         </header>
 
-        <!-- ================================================================= -->
-        <!-- 3. HERO SECTION (İlk Yazı Mobil Uyumlu Hale Getirildi) -->
-        <!-- ================================================================= -->
         <section class="relative bg-stone-950 py-12 md:py-24 px-4 overflow-hidden border-b border-stone-900 w-full">
             <div class="max-w-4xl mx-auto text-center relative z-10">
-                <!-- text-[10px] md:text-xs ile ilk küçük yazı kırılmadan tam oturur -->
+              
                 <span class="inline-block bg-red-900/50 text-red-400 border border-red-800/60 text-[10px] md:text-xs font-bold tracking-widest uppercase px-3 py-1 rounded-full mb-4">Geleneksel İtalyan Lezzeti</span>
-                <!-- text-3xl md:text-6xl ile ana başlık mobilde ekrandan taşmaz -->
+            
                 <h2 id="hero-title" class="text-3xl md:text-6xl font-black mb-4 md:mb-6 font-serif leading-tight">Gerçek Lezzet, <br><span class="text-red-500">Tutkulu Ustalar</span></h2>
                 <p id="hero-desc" class="text-stone-400 text-xs md:text-lg max-w-2xl mx-auto mb-6 md:mb-8 leading-relaxed">Özenle hazırladığımız 10 farklı pizza çeşidimizle hizmetinizdeyiz. Üstelik her pizzanın yanında buz gibi içeceğiniz bizden hediye!</p>
                 <a href="#menu-section" id="hero-btn" class="inline-block bg-red-600 hover:bg-red-700 text-white font-extrabold text-sm md:text-lg px-6 py-3 rounded-xl transition shadow-xl w-full sm:w-auto max-w-xs mx-auto">Menüyü Gör, Sipariş Ver</a>
             </div>
         </section>
 
-        <!-- ================================================================= -->
-        <!-- 4. MENÜ KARTLARI ALANI (MOBİLDE TAM YAN YANA İKİŞERLİ DÜZEN) -->
-        <!-- ================================================================= -->
         <main id="menu-section" class="max-w-6xl mx-auto px-2 md:px-4 py-12 md:py-20 w-full">
             <div class="text-center mb-8 px-2">
                 <h3 id="menu-heading" class="text-2xl md:text-4xl font-black font-serif mb-2">Eşsiz Pizza Menümüz</h3>
                 <p id="menu-subheading" class="text-stone-400 text-xs md:text-base">Her siparişte seçeceğiniz kutu içecek bedelsiz olarak teslim edilir.</p>
             </div>
 
-            <!-- grid-cols-2: Mobilde kesin olarak 2 şerli yan yana, gap-2 ile dar alan optimizasyonu -->
             <div class="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-2 md:gap-8">
                 
-                <!-- KART 1: Peynirli Şelale -->
                 <div class="bg-stone-950 rounded-xl md:rounded-2xl overflow-hidden border border-stone-800 hover:border-red-900/50 transition duration-300 flex flex-col group shadow-xl">
                     <div class="overflow-hidden relative">
-                        <!-- h-28 ile mobilde görseller küçüldü ve yan yana 2'li düzen sığdı -->
                         <img src="img/1.jpg" alt="Pizza" class="w-full h-28 md:h-64 object-cover group-hover:scale-105 transition duration-500">
                         <span class="absolute top-1 right-1 bg-green-600 text-white text-[8px] md:text-xs font-black px-1.5 py-0.5 rounded uppercase shadow">Hediye</span>
                     </div>
                     <div class="p-2 md:p-6 flex flex-col flex-grow">
-                        <!-- text-xs md:text-xl: Başlık mobilde sığsın diye küçültüldü -->
+                       
                         <h4 class="pizza-name text-xs md:text-xl font-bold font-serif mb-1 group-hover:text-red-400 transition truncate">Peynirli Şelale</h4>
-                        <!-- text-[10px]: Açıklama mobilde taşmasın diye line-clamp-2 yapıldı -->
+                      
                         <p class="pizza-desc text-stone-400 text-[10px] md:text-sm mb-3 flex-grow leading-tight line-clamp-2">Uzayan bol mozzarella peyniri, özel Bella sosu, sucuk dilimleri.</p>
                         <div class="border-t border-stone-800 pt-2 mt-auto">
-                            <!-- Yazı "Seçenekler" olarak kısaltıldı ki kutuyu sağa doğru patlatmasın -->
+                       
                             <button onclick="openOrderModal('Peynirli Şelale Pizza', 'img/1.jpg', '180 TL', '240 TL', '310 TL')" class="w-full bg-stone-900 hover:bg-red-600 hover:text-white text-red-400 font-bold py-1.5 px-1 rounded-lg transition text-[10px] md:text-base border border-stone-800 flex items-center justify-center gap-1">
                                 <span>Seçenekler</span> <i class="fa-solid fa-arrow-right text-[8px]"></i>
                             </button>
@@ -127,7 +107,6 @@
                     </div>
                 </div>
 
-                <!-- KART 2: Klasik İtalyan -->
                 <div class="bg-stone-950 rounded-xl md:rounded-2xl overflow-hidden border border-stone-800 hover:border-red-900/50 transition duration-300 flex flex-col group shadow-xl">
                     <div class="overflow-hidden relative">
                         <img src="img/2.jpg" alt="Pizza" class="w-full h-28 md:h-64 object-cover group-hover:scale-105 transition duration-500">
@@ -144,7 +123,6 @@
                     </div>
                 </div>
 
-                <!-- KART 3: Mantarlı Bella -->
                 <div class="bg-stone-950 rounded-xl md:rounded-2xl overflow-hidden border border-stone-800 hover:border-red-900/50 transition duration-300 flex flex-col group shadow-xl">
                     <div class="overflow-hidden relative">
                         <img src="img/3.jpg" alt="Pizza" class="w-full h-28 md:h-64 object-cover group-hover:scale-105 transition duration-500">
@@ -161,7 +139,6 @@
                     </div>
                 </div>
 
-                <!-- KART 4: Fit Bahçe -->
                 <div class="bg-stone-950 rounded-xl md:rounded-2xl overflow-hidden border border-stone-800 hover:border-red-900/50 transition duration-300 flex flex-col group shadow-xl">
                     <div class="overflow-hidden relative">
                         <img src="img/4.jpg" alt="Pizza" class="w-full h-28 md:h-64 object-cover group-hover:scale-105 transition duration-500">
@@ -178,7 +155,6 @@
                     </div>
                 </div>
 
-                <!-- KART 5: Margherita Premium -->
                 <div class="bg-stone-950 rounded-xl md:rounded-2xl overflow-hidden border border-stone-800 hover:border-red-900/50 transition duration-300 flex flex-col group shadow-xl">
                     <div class="overflow-hidden relative">
                         <img src="img/5.jpg" alt="Pizza" class="w-full h-28 md:h-64 object-cover group-hover:scale-105 transition duration-500">
@@ -195,7 +171,6 @@
                     </div>
                 </div>
 
-                <!-- KART 6: Kalpli Aşk Pizzası -->
                 <div class="bg-stone-950 rounded-xl md:rounded-2xl overflow-hidden border border-stone-800 hover:border-red-900/50 transition duration-300 flex flex-col group shadow-xl">
                     <div class="overflow-hidden relative">
                         <img src="img/6.jpg" alt="Pizza" class="w-full h-28 md:h-64 object-cover group-hover:scale-105 transition duration-500">
@@ -212,7 +187,6 @@
                     </div>
                 </div>
 
-                <!-- KART 7: Bol Sucuklu -->
                 <div class="bg-stone-950 rounded-xl md:rounded-2xl overflow-hidden border border-stone-800 hover:border-red-900/50 transition duration-300 flex flex-col group shadow-xl">
                     <div class="overflow-hidden relative">
                         <img src="img/7.jpg" alt="Pizza" class="w-full h-28 md:h-64 object-cover group-hover:scale-105 transition duration-500">
@@ -229,7 +203,6 @@
                     </div>
                 </div>
 
-                <!-- KART 8: Jalapeno Pepperoni -->
                 <div class="bg-stone-950 rounded-xl md:rounded-2xl overflow-hidden border border-stone-800 hover:border-red-900/50 transition duration-300 flex flex-col group shadow-xl">
                     <div class="overflow-hidden relative">
                         <img src="img/8.jpg" alt="Pizza" class="w-full h-28 md:h-64 object-cover group-hover:scale-105 transition duration-500">
@@ -246,7 +219,6 @@
                     </div>
                 </div>
 
-                <!-- KART 9: Dört Peynirli -->
                 <div class="bg-stone-950 rounded-xl md:rounded-2xl overflow-hidden border border-stone-800 hover:border-red-900/50 transition duration-300 flex flex-col group shadow-xl">
                     <div class="overflow-hidden relative">
                         <img src="img/11.jpg" alt="Pizza" class="w-full h-28 md:h-64 object-cover group-hover:scale-105 transition duration-500">
@@ -263,7 +235,6 @@
                     </div>
                 </div>
 
-                <!-- KART 10: Sadece Sucuklu -->
                 <div class="bg-stone-950 rounded-xl md:rounded-2xl overflow-hidden border border-stone-800 hover:border-red-900/50 transition duration-300 flex flex-col group shadow-xl">
                     <div class="overflow-hidden relative">
                         <img src="img/1.jpg" alt="Pizza" class="w-full h-28 md:h-64 object-cover group-hover:scale-105 transition duration-500">
@@ -283,9 +254,6 @@
             </div>
         </main>
 
-        <!-- ================================================================= -->
-        <!-- 5. İLETİŞİM BİLGİLERİ ALANI -->
-        <!-- ================================================================= -->
         <section id="contact-section" class="bg-stone-950 border-t border-stone-900 py-12 px-4 w-full">
             <div class="max-w-4xl mx-auto">
                 <div class="text-center mb-8">
@@ -312,9 +280,6 @@
             </div>
         </section>
 
-        <!-- ================================================================= -->
-        <!-- 6. HARİTA ALANI -->
-        <!-- ================================================================= -->
         <section id="map-section" class="w-full bg-stone-900 border-t border-stone-900">
             <div class="relative w-full h-64 md:h-96">
                 <iframe class="w-full h-full grayscale opacity-85 invert" 
@@ -327,18 +292,12 @@
             </div>
         </section>
 
-        <!-- ================================================================= -->
-        <!-- 7. FOOTER ALANI -->
-        <!-- ================================================================= -->
         <footer class="bg-stone-950 border-t border-stone-900 py-6 text-center w-full">
             <p id="footer-text" class="text-stone-500 text-xs">© 2026 Pizza Bella. Designed with ❤️</p>
         </footer>
 
     </div>
 
-    <!-- ================================================================= -->
-    <!-- SİPARİŞ MODALİ -->
-    <!-- ================================================================= -->
     <div id="order-modal" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 opacity-0 pointer-events-none transition-all duration-350">
         <div class="bg-stone-900 border border-stone-800 rounded-3xl w-full max-w-sm overflow-hidden transform scale-95 transition-all duration-350 shadow-2xl mx-auto">
             <div class="relative h-32 bg-stone-950">
@@ -374,22 +333,17 @@
             </div>
         </div>
     </div>
-<!-- Mevcut script.js satırın -->
     <script src="script.js"></script>
 
-    <!-- Dil butonlarını aktifleştiren ve splash ekranını kapatan ekleme -->
     <script>
-        // Sayfadaki tüm dil seçme butonlarını yakala
         document.querySelectorAll('.lang-btn').forEach(btn => {
             btn.addEventListener('click', function() {
                 const selectedLang = this.getAttribute('data-lang');
                 
-                // Eğer script.js içinde changeLanguage gibi bir fonksiyonun varsa onu tetikler
                 if (typeof changeLanguage === 'function') {
                     changeLanguage(selectedLang);
                 }
                 
-                // Splash ekranını gizle
                 const splash = document.getElementById('splash-screen');
                 const mainContent = document.getElementById('main-site-content');
                 
