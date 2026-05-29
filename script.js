@@ -1,6 +1,3 @@
-// =================================================================
-// DİL ÇEVİRİ SÖZLÜĞÜ (Dataları buraya ekledik)
-// =================================================================
 const translations = {
     tr: {
         "nav-menu": '<i class="fa-solid fa-pizza-slice text-red-500"></i> <span>Menü</span>',
@@ -20,7 +17,6 @@ const translations = {
         "footer-text": '© 2026 Pizza Bella. Designed with ❤️',
         "modal-order-title": 'Sipariş Kanalları',
         "btn-call-order": 'Telefonla Hemen Ara',
-        // Pizza İsimleri ve Açıklamaları (Sırasıyla)
         pizzas: [
             { name: "Peynirli Şelale", desc: "Uzayan bol mozzarella peyniri, özel Bella sosu, sucuk dilimleri." },
             { name: "Klasik İtalyan", desc: "İncecik taş fırın hamuru, özel marine dana salam, taze fesleğen." },
@@ -98,14 +94,10 @@ const translations = {
     }
 };
 
-// =================================================================
-// DİL DEĞİŞTİRME FONKSİYONU
-// =================================================================
 function changeLanguage(lang) {
     const langData = translations[lang];
     if (!langData) return;
 
-    // 1. Sabit Metinleri Çevir (ID bazlı)
     Object.keys(langData).forEach(id => {
         const element = document.getElementById(id);
         if (element && id !== 'pizzas') {
@@ -113,7 +105,6 @@ function changeLanguage(lang) {
         }
     });
 
-    // 2. Menüdeki Pizzaları Dinamik Olarak Çevir (Class bazlı loop)
     const pizzaNames = document.querySelectorAll('.pizza-name');
     const pizzaDescs = document.querySelectorAll('.pizza-desc');
 
@@ -127,9 +118,6 @@ function changeLanguage(lang) {
     });
 }
 
-// =================================================================
-// EVENT LISTENERS & SPLASH SCREEN KAPATMA
-// =================================================================
 document.addEventListener("DOMContentLoaded", () => {
     const langButtons = document.querySelectorAll(".lang-btn");
     const splashScreen = document.getElementById("splash-screen");
@@ -138,11 +126,9 @@ document.addEventListener("DOMContentLoaded", () => {
     langButtons.forEach(button => {
         button.addEventListener("click", () => {
             const lang = button.getAttribute("data-lang");
-            
-            // Önce dili değiştiriyoruz
+
             changeLanguage(lang);
 
-            // Sonra giriş ekranını kapatıp ana siteyi gösteriyoruz
             if (splashScreen) splashScreen.classList.add("splash-hidden");
             if (mainSiteContent) {
                 mainSiteContent.classList.remove("content-hidden");
@@ -152,13 +138,11 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 });
 
-// =================================================================
-// DİNAMİK MODAL FONKSİYONLARI (Boyut ve Seçenekler Gör)
-// =================================================================
+
 function openOrderModal(name, imgSrc, priceSm, priceMd, priceLg) {
     const modal = document.getElementById('order-modal');
+
     
-    // Açılan pizzanın o anki diline göre adını karttan çekelim (veya direkt parametre)
     document.getElementById('modal-pizza-name').textContent = name;
     document.getElementById('modal-pizza-img').src = imgSrc;
     document.getElementById('modal-price-sm').textContent = priceSm;
